@@ -10,6 +10,9 @@
 
 --]]
 
+vim.opt.scrolloff = 10
+vim.opt.startofline = true
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -247,6 +250,8 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+vim.keymap.set('i', '<C-Bs>', '<Esc>diwi', { silent = true })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -529,3 +534,5 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+vim.opt.number = true
+vim.opt.relativenumber = true
